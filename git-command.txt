@@ -1,6 +1,6 @@
-$ cd C:
+GIT-COMMAND
+$ cd C:\hello-world                     //注意用顺斜杠（ps.回到主目录用$ cd）
 $ mkdir le                                   //创建一个空目录
-$ cd le
 $ pwd                                          //我在哪
 $ ls                                              //我所在目录下有啥
 $ git init                                      //通过git init命令把这个目录变成Git可以管理的仓库 
@@ -31,11 +31,3 @@ $ git clone  <抄地址>                        //把一个github上的仓库克
 创建+切换分支：git checkout -b <name>或者git switch -c <name>
 合并指定分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
-                                                
-                                                
-                                                
-
-
-
-
-
