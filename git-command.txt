@@ -1,7 +1,8 @@
 $ cd C:
 $ mkdir le                                   //创建一个空目录
 $ cd le
-$ pwd                                          //pwd命令用于显示当前目录
+$ pwd                                          //我在哪
+$ ls                                              //我所在目录下有啥
 $ git init                                      //通过git init命令把这个目录变成Git可以管理的仓库 
                                                   // 当前目录下多了一个.git的目录，如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。
 $ git add learn.txt
@@ -21,19 +22,20 @@ $ git checkout -- test.txt                          //用版本库里的版本�
 $ git remote add origin git@github.com:Shuremm/le.git   //关联一个远程库（注意，在该目录下操作）
 $ git push -u origin master                   //第一次推送master分支的所有内容                                                
 $ git push origin master                        //把本地master分支的最新修改推送至GitHub
-$ ls                                                       //目录
-$ git checkout -b dev  =$ git switch -c dev            // git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+
+分支
+$ git checkout -b dev  =$ git switch -c dev            // 创建分支dev并切换到dev，相当于以下两条命令：
 $ git branch dev                                 //创建分支：git branch <name>
 $ git checkout dev                              //切换到dev分支                  
 $ git add readme.txt 
 $ git commit -m "branch test"
 $ git checkout main          $ git switch master                //回到（切换到）main分支                      
 $ git merge dev                                //把dev分支的工作成果合并到main分支上           合并某分支到当前分支：git merge <name>     
-$ git branch -d dev                           // 合并完成后，就可以放心地删除dev分支了        删除分支：git branch -d <name>             
-$ git branch                                      //查看分支          
+$ git branch -d <name>                           // 删除分支
+$ git branch                                      //查看所有分支          （当前分支前面会标一个*号）
+$ git clone  <抄地址>                        //把一个github上的仓库克隆到本地
                                                 
-                                                
-                                                
+                                                 
                                                 
                                                 
                                                 
