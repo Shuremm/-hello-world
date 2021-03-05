@@ -22,20 +22,15 @@ $ git checkout -- test.txt                          //用版本库里的版本�
 $ git remote add origin git@github.com:Shuremm/le.git   //关联一个远程库（注意，在该目录下操作）
 $ git push -u origin master                   //第一次推送master分支的所有内容                                                
 $ git push origin master                        //把本地master分支的最新修改推送至GitHub
-
-分支
-$ git checkout -b dev  =$ git switch -c dev            // 创建分支dev并切换到dev，相当于以下两条命令：
-$ git branch dev                                 //创建分支：git branch <name>
-$ git checkout dev                              //切换到dev分支                  
-$ git add readme.txt 
-$ git commit -m "branch test"
-$ git checkout main          $ git switch master                //回到（切换到）main分支                      
-$ git merge dev                                //把dev分支的工作成果合并到main分支上           合并某分支到当前分支：git merge <name>     
-$ git branch -d <name>                           // 删除分支
-$ git branch                                      //查看所有分支          （当前分支前面会标一个*号）
 $ git clone  <抄地址>                        //把一个github上的仓库克隆到本地
-                                                
-                                                 
+
+分支:                                                
+查看分支：git branch（当前分支前面会标一个*号）
+创建分支：git branch <name>
+切换分支：git checkout <name>或者git switch <name>
+创建+切换分支：git checkout -b <name>或者git switch -c <name>
+合并指定分支到当前分支：git merge <name>
+删除分支：git branch -d <name>                                                 
                                                 
                                                 
                                                 
