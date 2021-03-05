@@ -31,3 +31,5 @@ $ git clone  <抄地址>                        //把一个github上的仓库克
 创建+切换分支：git checkout -b <name>或者git switch -c <name>
 合并指定分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
+
+冲突：merge之后，能合并的都合并了，直接打开文件（每个冲突的位置，两个版本都已经给出来了），把冲突的地方写你想要的，保存，add，commit就ok了（超棒的有没有QAQ!!!）
