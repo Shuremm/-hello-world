@@ -8,7 +8,8 @@ $ git init                                      //通过git init命令把这个�
 $ git add learn.txt
 $ git commit -m "wrote a learn file"
 $ git log                                       //查看每次commit的注释(含作者、时间）
-$ git log --pretty=oneline                      //查看每次的注释（简化到每个一行）
+              --pretty=oneline       或者--oneline              //查看每次的注释（简化到每个一行）
+              --graph                                                      //图形显示（我喜欢这个！注意看*就看得懂了）
 $ git reset --hard HEAD^^                       //（一个^让HEAD回到上一步）（HEAD~100,一次返回100项）
 $ git reset --hard 33aed                        //让HEAD回到某一文件版本
 $ git reflog                                    //git reflog 记录了每一次命令（应该是HEAD指针相关的）；可用于查找各版本的commit id
@@ -25,11 +26,33 @@ $ git push origin master                        //把本地master分支的最新
 $ git clone  <抄地址>                        //把一个github上的仓库克隆到本地
 
 分支:                                                
-查看分支：git branch（当前分支前面会标一个*号）
-创建分支：git branch <name>
-切换分支：git checkout <name>或者git switch <name>
-创建+切换分支：git checkout -b <name>或者git switch -c <name>
-合并指定分支到当前分支：git merge <name>
-删除分支：git branch -d <name>
+查看分支：		git branch（当前分支前面会标一个*号）
+创建分支：		git branch <name>
+切换分支：		git checkout <name>或者git switch <name>
+创建+切换分支：		git checkout -b <name>或者git switch -c <name>
+合并指定分支到当前分支：	git merge <name>
+合并（better）：		git merge --no-ff -m "……" <name>（在删除了<name>分支后，使用git log仍可以看到分支上的记录）
+删除分支：		git branch -d <name>
 
 冲突：merge之后，能合并的都合并了，直接打开文件（每个冲突的位置，两个版本都已经给出来了），把冲突的地方写你想要的，保存，add，commit就ok了（超棒的有没有QAQ!!!）
+
+bug：
+$ git stash					存
+$ git stash list					(找)
+$ git stash pop = $ git stash apply + $ git stash drop	恢复
+$ git stash apply stash@{0}				stash@{0}出自stash list
+$ git cherry-pick <commit>				一键改dev上的bug
+完整流程：
+$ git stash					存
+$ git switch master					转
+$ git switch -c issue-101				新建分支
+$ git add readme.txt 				提交
+$ git commit -m "fix bug 101"
+$ git switch master					转
+$ git merge --no-ff -m "merged bug fix 101" issue-101	合并
+$ git switch dev					转
+$ git stash list					(找)
+$ git stash pop = $ git stash apply + $ git stash drop	恢复
+$ git stash apply stash@{0}
+$ git cherry-pick 4c805e2				一键改dev上的bug
+
