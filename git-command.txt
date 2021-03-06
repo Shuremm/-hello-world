@@ -56,3 +56,9 @@ $ git stash pop = $ git stash apply + $ git stash drop	恢复
 $ git stash apply stash@{0}
 $ git cherry-pick 4c805e2				一键改dev上的bug
 
+多人协作
+master主分支，dev开发分支，需要与远程同步
+$ git push origin <本地分支名字>			如果远程库没有该分支，会自动新建同名分支wow~ ⊙o⊙！
+
+rebase：
+略
