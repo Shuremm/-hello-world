@@ -1,23 +1,25 @@
 GIT-COMMAND
-$ cd C:\hello-world                     //注意用顺斜杠（ps.回到主目录用$ cd）
-$ mkdir le                                   //创建一个空目录
-$ pwd                                          //我在哪
-$ ls                                              //我所在目录下有啥
-$ git init                                      //通过git init命令把这个目录变成Git可以管理的仓库 
-                                                  // 当前目录下多了一个.git的目录，如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。
+$ cd C:\hello-world			//注意用顺斜杠（ps.回到主目录用$ cd）
+$ mkdir le			//创建一个空目录
+$ pwd				//我在哪
+$ ls                               	              	//我所在目录下有啥
+$ git init				//通过git init命令把这个目录变成Git可以管理的仓库 
+				// 当前目录下多了一个.git的目录，如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。
 $ git add learn.txt
 $ git commit -m "wrote a learn file"
-$ git log                                       //查看每次commit的注释(含作者、时间）
-              --pretty=oneline       或者--oneline              //查看每次的注释（简化到每个一行）
-              --graph                                                      //图形显示（我喜欢这个！注意看*就看得懂了）
-$ git reset --hard HEAD^^                       //（一个^让HEAD回到上一步）（HEAD~100,一次返回100项）
-$ git reset --hard 33aed                        //让HEAD回到某一文件版本
-$ git reflog                                    //git reflog 记录了每一次命令（应该是HEAD指针相关的）；可用于查找各版本的commit id
-$ git status                                    //查看暂存区（stage/index)状态；
-                                                //Git 的隐藏目录.git（版本库）中有暂存区、自动创建的第一个分支master，以及指向master的指针HEAD
-$ git restore --staged learn.txt                //to unstage
-$ git diff HEAD -- LICENSE.txt                  //查看工作区和版本库（repository）里面最新版本的区别
-$ rm test.txt                                            //直接在文件管理器中把没用的文件删了，或者用rm命令删了 
+$ git log                                     		  //查看每次commit的注释(含作者、时间）
+              --pretty=oneline       或者--oneline        //查看每次的注释（简化到每个一行）
+              --graph                                                 //图形显示（我喜欢这个！注意看*就看得懂了）
+$ git reset --hard HEAD^^			//（一个^让HEAD回到上一步）（HEAD~100,一次返回100项）
+$ git reset --hard 33aed			  //让HEAD回到某一文件版本
+$ git reflog                                  		//git reflog 记录了每一次命令（应该是HEAD指针相关的）；可用于查找各版本的commit id
+$ git status                               		     //查看暂存区（stage/index)状态；
+                                            		    //Git 的隐藏目录.git（版本库）中有暂存区、自动创建的第一个分支master，以及指向master的指针HEAD
+$ git restore --staged learn.txt       		   //to unstage
+$ git diff 					//查看尚未加入暂存区的改动
+$ git diff HEAD				//查看已缓存+未缓存的所有改动
+$ git diff HEAD -- LICENSE.txt		//查看工作区和版本库（repository）里面最新版本的区别
+$ rm test.txt                                          	//直接在文件管理器中把没用的文件删了，或者用rm命令删了 
 $ git rm test.txt   
 $ git checkout -- test.txt                          //用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。      
 $ git remote add origin git@github.com:Shuremm/le.git   //关联一个远程库（注意，在该目录下操作）
@@ -58,7 +60,10 @@ $ git cherry-pick 4c805e2				一键改dev上的bug
 
 多人协作
 master主分支，dev开发分支，需要与远程同步
-$ git push origin <本地分支名字>			如果远程库没有该分支，会自动新建同名分支wow~ ⊙o⊙！
+$ git push origin <本地分支名字>			如果远程库没有该分支，会自动新建同名分支⊙o⊙！
 
 rebase：
 略
+
+问题：
+似乎没有git history命令
